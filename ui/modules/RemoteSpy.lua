@@ -683,7 +683,7 @@ pathContext:SetCallback(function()
     local oldStatus = oh.getStatus()
 
     oh.setStatus("Copying " .. selectedInstance.Name .. "'s path")
-    setClipboard(getInstancePath(selectedInstance))
+    setclipboard(getInstancePath(selectedInstance))
     wait(0.25)
     oh.setStatus(oldStatus)
 end)
@@ -741,7 +741,7 @@ pathContextSelected:SetCallback(function()
         paths = paths .. getInstancePath(log.Remote.Instance) .. '\n'
     end
 
-    setClipboard(paths)
+    setclipboard(paths)
     selected.logs = {}
 end)
 
@@ -851,7 +851,7 @@ scriptContext:SetCallback(function()
     oh.setStatus("Generating RemoteSpy Pseudocode ...")
 
     if #selected.args == 0 then
-        setClipboard(script .. remotePath .. ':' .. method .. "()")
+        setclipboard(script .. remotePath .. ':' .. method .. "()")
     else
         local selectedArgs = selected.args
         local args = ""
@@ -876,7 +876,7 @@ scriptContext:SetCallback(function()
             args = args .. ("oh%s%d, "):format(variableName, i)
         end
 
-        setClipboard(script .. '\n' .. remotePath .. ':' .. method .. '(' .. args:sub(1, -3) .. ')')
+        setclipboard(script .. '\n' .. remotePath .. ':' .. method .. '(' .. args:sub(1, -3) .. ')')
     end
 
     wait(0.25)
@@ -887,7 +887,8 @@ callingScriptContext:SetCallback(function()
     local oldStatus = oh.getStatus()
 
     oh.setStatus("Copying " .. selected.callingScript.Name .. "'s path")
-    setClipboard(getInstancePath(selected.callingScript))
+    setclipboard(getInstancePath(selected.callingScript))
+    
     wait(0.25)
     oh.setStatus(oldStatus)
 end)
